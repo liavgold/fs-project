@@ -1,9 +1,6 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-//1.login check if email exist if NOT error
-//2.register check if email exist if YES error
-//3.wrong params / no params validation
 
 let emailExist = async (email) => {
   const result = await User.findOne({ email });

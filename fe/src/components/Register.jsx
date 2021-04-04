@@ -25,39 +25,56 @@ const backToLogin=()=>{
     console.log(data);
   };
   return (
-    <form
-      onSubmit={onRegister}
-      style={{ display: "flex", flexDirection: "column" }}
-    >
-      <input
-        placeholder="Enter Email"
-        type="email"
-        required
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
-      />
-      <br />
-      <input
-        palceholder="Enter Password"
-        type="password"
-        value={password}
-        required
-        onChange={(event) => setPassword(event.target.value)}
-      />
-      <br />
-      <label>
-        Name:
-        <input
-          type="text"
-          required
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
-      </label>
-      <br />
-      <button type="submit">Sign Up</button>
-      <button type="button" onClick={backToLogin}>Login</button>
-    </form>
+    <div className="login-container">
+      <div className="card">
+        <div className="container"></div>
+        <form
+          onSubmit={onRegister}
+          style={{
+            backgroundColor: "Aquamarine",
+            justifyContent: "center",
+          }}
+        >
+          <h1>Sign Up</h1>
+          <label>
+            <b>Email</b>
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
+          </label>
+          <label>
+            <b>Password</b>
+            <input
+              type="password"
+              value={password}
+              required
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </label>
+          <label>
+            <b>Name</b>
+            <input
+              type="text"
+              required
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
+          </label>
+          <br />
+          <br />
+          <button type="submit">Sign Up</button>
+        </form>
+        <br />
+        <hr />
+        <button type="button" onClick={backToLogin}>
+          Login
+        </button>
+        <div />
+      </div>
+    </div>
   );
 };
 export default Register;

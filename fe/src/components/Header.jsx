@@ -20,8 +20,7 @@ const onLogout =() =>{
     <nav
       id="navigation"
       style={{
-        backgroundColor: "blue",
-        color: "yellow",
+        backgroundColor: "Aquamarine",
         display: "flex",
         justifyContent: "center",
       }}
@@ -30,7 +29,7 @@ const onLogout =() =>{
         Welcome Back {getName()}
       </h1>
       <div style={{ marginLeft: "15px" }}>
-        <button onClick = {onLogout}>Logout</button>
+        <button onClick={onLogout}>Logout</button>
       </div>
     </nav>
   );

@@ -34,33 +34,44 @@ const Posts = () => {
 
   return (
     <div>
-      <h2>Create New Post:</h2>
+      <h2
+        style={{
+          backgroundColor: "Aquamarine",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        Create New Post:
+      </h2>
       <form onSubmit={onCreate}>
         <label>
+          Title
           <input
             maxLength="30"
             minLength="1"
             type="text"
-            placeholder="title"
             value={title}
             required
             onChange={(event) => setTitle(event.target.value)}
           />
-          <br />
+        </label>
+        <label>
+          Content
           <textarea
             minLength="10"
             maxLength="256"
             type="text"
             value={content}
-            placeholder="content"
             required
             onChange={(event) => setContent(event.target.value)}
           />
         </label>
         <br />
+        <br />
         <button type="submit">Create</button>
       </form>
       <br />
+      <hr />
       <button onClick={oncancel}>Cancel</button>
     </div>
   );

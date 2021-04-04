@@ -96,6 +96,8 @@ export const Login = () => {
                 id="password"
               />
             </label>
+            <br />
+            <br />
             <button disabled={data.isSubmitting}>
               {data.isSubmitting ? "Loading..." : "Login"}
             </button>
@@ -105,7 +107,7 @@ export const Login = () => {
             <span className="form-error">{data.errorMessage}</span>
           )}
           <br />
-          <hr/>
+          <hr />
           <button onClick={onRegister}>Sign Up</button>
         </div>
       </div>
