@@ -4,8 +4,16 @@ const jwt = require("jsonwebtoken");
 
 exports.addPost = async (req, res, next) => {
   const { post } = req.body;
-  console.log(req.userId);
-  const createPost = new Post({ ...post, creator: req.userId });
+  console.log(`this is the post: ${post}`);
+  //console.log(req.userId);
+  if (
+    !post.title ||
+    post.title.length === 0 ||
+    !post.content ||
+    post.content.length === 0
+  )
+  return res.status(400).json({msg:"missing params"})
+    const createPost = new Post({ ...post, creator: req.userId });
   const createdPost = await createPost.save();
   res.json({
     user: {
@@ -24,5 +32,6 @@ exports.getPosts = async (req, res, next) => {
     res.json({ msg: `No posts found` });
     return;
   }
+  console.log(`new Post request by userID: ${req.userId}`);
   res.json({ posts });
 };
